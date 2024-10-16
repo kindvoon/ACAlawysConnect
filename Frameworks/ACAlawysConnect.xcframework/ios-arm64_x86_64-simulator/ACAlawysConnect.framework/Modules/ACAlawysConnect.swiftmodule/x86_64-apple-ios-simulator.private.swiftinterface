@@ -1,0 +1,76 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.10 (swiftlang-5.10.0.13 clang-1500.3.9.4)
+// swift-module-flags: -target x86_64-apple-ios12.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -Onone -enable-bare-slash-regex -module-name ACAlawysConnect
+@_exported import ACAlawysConnect
+import Alamofire
+import Foundation
+import SocketRocket
+import Swift
+import SwiftProtobuf
+import UIKit
+import _Concurrency
+import _StringProcessing
+import _SwiftConcurrencyShims
+public protocol TGACLoginCenter : ObjectiveC.NSObjectProtocol {
+  func handleSKMsg(_ message: ACAlawysConnect.ACHandler)
+  func handleSKOpen()
+  func handleSKErr(_ error: (any Swift.Error)?)
+  func handleSKReLine(count: Swift.Int)
+  func handleSKClose(_ code: Swift.Int, reason: Swift.String?, wasClean: Swift.Bool)
+  func handleSKChange(_ state: ACAlawysConnect.SModityi, error: (any Swift.Error)?)
+}
+extension ACAlawysConnect.TGACLoginCenter {
+  public func handleSKChange(_ state: ACAlawysConnect.SModityi, error: (any Swift.Error)?)
+}
+@_hasMissingDesignatedInitializers public class ACManagerAsic {
+  public static let shared: ACAlawysConnect.ACManagerAsic
+  public var state: ACAlawysConnect.SModityi {
+    get
+  }
+  public func openRequest(closure: @escaping () -> Foundation.URLRequest?)
+  public func findingSKISWorking()
+  public func sendData(_ data: Any)
+  public func exitAudioChatHouse(houseIndentifier: Swift.String, isMain: Swift.Bool)
+  public func registerSKProtol(skLongConnectProtocol: (any ACAlawysConnect.TGACLoginCenter)?)
+  public func shootMessageToUnity(msgStr: Swift.String)
+  public func openUrlRequest(_ urlRequest: Foundation.URLRequest)
+  public func enterAudioChatHouse(houseIndentifier: Swift.String, isMain: Swift.Bool, thirdAudioChatHouseIndentifier: Swift.String?)
+  public func removeAll()
+  public func exitThirdAudioChatHouse()
+  @objc deinit
+}
+public enum SModityi {
+  case SRegister
+  case SHome
+  case SRegisterj
+  case SObserver
+  public static func == (a: ACAlawysConnect.SModityi, b: ACAlawysConnect.SModityi) -> Swift.Bool
+  public func hash(into hasher: inout Swift.Hasher)
+  public var hashValue: Swift.Int {
+    get
+  }
+}
+public struct ACHandler {
+  public var messageFormMate: Swift.String
+  public var data: Foundation.Data
+  public var weiYIIndentifier: Swift.String
+  public var newsSeconds: Swift.Int64
+  public var hasChatAudioHouseIndentifer: Swift.String
+}
+@objc @_inheritsConvenienceInitializers public class ACNews : ObjectiveC.NSObject {
+  public var keyString: Swift.String
+  public var timestamp: Swift.Double
+  public func outTime(_ dur: Foundation.TimeInterval) -> Swift.Bool
+  @objc override dynamic public var hash: Swift.Int {
+    @objc get
+  }
+  @objc override dynamic public func isEqual(_ object: Any?) -> Swift.Bool
+  @objc override dynamic public init()
+  @objc deinit
+}
+public class ACNewsTimer {
+  public init(timeInterval: Foundation.TimeInterval, isStart: Swift.Bool = false, queue: Dispatch.DispatchQueue = .main, block: @escaping (ACAlawysConnect.ACNewsTimer) -> Swift.Void)
+  @objc deinit
+}
+extension ACAlawysConnect.SModityi : Swift.Equatable {}
+extension ACAlawysConnect.SModityi : Swift.Hashable {}

@@ -1,0 +1,6 @@
+framework module ACAlawysConnect {
+  umbrella header "ACAlawysConnect.h"
+  export *
+
+  module * { export * }
+}
